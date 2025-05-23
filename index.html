@@ -23,7 +23,8 @@
             font-family: 'Inter', sans-serif;
             color: var(--color-charcoal);
             background-color: var(--color-off-white);
-            @apply antialiased;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Playfair Display', serif;
@@ -50,7 +51,16 @@
             border: 1px solid var(--color-primary-green-500); /* Subtle border */
         }
         .message-box button {
-            @apply mt-4 px-6 py-2 text-white font-semibold rounded-lg transition-colors duration-300;
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            color: white;
+            font-weight: 600;
+            border-radius: 0.5rem; /* Rounded corners */
+            transition-property: background-color;
+            transition-duration: 300ms;
             background-color: var(--color-primary-green-700);
             border: none;
         }
@@ -296,6 +306,22 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        /* Custom style for the luxurious Gozal Tea header text */
+        .gozal-tea-luxury-header {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-primary-green-900); /* Ensure color is applied */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+            position: relative; /* Enable positioning */
+            top: -4px; /* Move text up by 4px */
+        }
+
+        /* Custom style for luxurious text within content */
+        .luxurious-text {
+            font-family: 'Playfair Display', serif;
+            color: var(--color-primary-green-900); /* Deep green for luxury */
+            font-weight: bold; /* Make it bold for emphasis */
+        }
     </style>
 </head>
 <body>
@@ -305,9 +331,9 @@
             <a href="#" class="flex items-center space-x-2">
                 <svg
                     viewBox="0 0 400 480"
-                    class="w-16 h-16" /* Increased size to w-16 h-16 */
+                    class="w-20 h-20"
                     xmlns="http://www.w3.org/2000/svg"
-                    style="vertical-align: text-bottom;" /* Aligns bottom of SVG with text baseline */
+                    style="vertical-align: top;" /* Changed to vertical-align: top; */
                 >
                     <defs>
                         <radialGradient id="goldenAura" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
@@ -411,7 +437,7 @@
                         </textPath>
                     </text>
                 </svg>
-                <span class="text-3xl font-bold text-primary-green-900" style="color: var(--color-primary-green-900);">Gozal Tea</span>
+                <span class="text-3xl md:text-4xl font-bold gozal-tea-luxury-header">Gozal Tea</span>
             </a>
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="#hero" class="text-gray-700 hover:text-primary-green-700 font-medium transition-colors duration-200">Home</a>
@@ -475,14 +501,14 @@
             <h2 class="text-4xl md:text-5xl font-bold mb-12" data-aos="fade-up" style="color: var(--color-primary-green-900);">Our Enduring Legacy: Crafting Perfection Since 1970</h2>
             <div class="max-w-4xl mx-auto text-gray-700 text-lg leading-relaxed space-y-6" data-aos="fade-up" data-aos-delay="200">
                 <p>
-                    Gozal Tea was established in the year **1970**, with a simple idea to encourage the world to make a fresh start, every day. Synonymous with quality and culture, our range of widely loved products i.e. Leaf Teas, Green Teas, Fruit Teas, and Herbal Teas, are a testament to our commitment to excellence. With values that guide our decisions and actions, we remain true to our founder's vision - to simply make everyday better with a fresh cup of tea!
+                    Gozal Tea was established in the year <span class="luxurious-text">1970</span>, with a simple idea to encourage the world to make a fresh start, every day. Synonymous with quality and culture, our range of widely loved products i.e. Leaf Teas, Green Teas, Fruit Teas, and Herbal Teas, are a testament to our commitment to excellence. With values that guide our decisions and actions, we remain true to our founder's vision - to simply make everyday better with a fresh cup of tea!
                 </p>
                 <p class="font-bold text-xl" style="color: var(--color-primary-green-700);">Gozal Family</p>
 
                 <div class="mt-12 pt-12 border-t border-gray-200">
                     <h3 class="text-3xl md:text-4xl font-bold mb-8" style="color: var(--color-primary-green-900);">تراثنا الدائم: إتقان الحرفية منذ عام 1970</h3>
                     <p dir="rtl" class="text-xl text-gray-700 leading-relaxed text-right">
-                        منذ تأسيسها في عام **1970**، انطلقت شركة جوزال تي بفكرة بسيطة وملهمة: تشجيع العالم على بداية جديدة كل يوم. أصبحت علامتنا التجارية مرادفًا للجودة والثقافة، حيث نقدم مجموعة واسعة من المنتجات المحبوبة، بما في ذلك شاي الأوراق الفاخر، الشاي الأخضر، شاي الفاكهة، وشاي الأعشاب، والتي تعكس التزامنا الراسخ بالتميز. نحن نستلهم قيمنا الأساسية لتوجيه قراراتنا وأفعالنا مع البقاء أوفياء لرؤية مؤسسنا:
+                        منذ تأسيسها في عام <span class="luxurious-text">1970</span>، انطلقت شركة جوزال تي بفكرة بسيطة وملهمة: تشجيع العالم على بداية جديدة كل يوم. أصبحت علامتنا التجارية مرادفًا للجودة والثقافة، حيث نقدم مجموعة واسعة من المنتجات المحبوبة، بما في ذلك شاي الأوراق الفاخر، الشاي الأخضر، شاي الفاكهة، وشاي الأعشاب، والتي تعكس التزامنا الراسخ بالتميز. نحن نستلهم قيمنا الأساسية لتوجيه قراراتنا وأفعالنا مع البقاء أوفياء لرؤية مؤسسنا:
                     </p>
                     <p dir="rtl" class="text-xl text-gray-700 leading-relaxed text-right">
                         جعل كل يوم أفضل مع كوب طازج من الشاي.
@@ -495,51 +521,12 @@
         </div>
     </section>
 
-    <section id="b2c-products" class="py-24 md:py-32 bg-primary-green-50" style="background-color: var(--color-primary-green-50);">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-16" data-aos="fade-up" style="color: var(--color-primary-green-900);">The Gozal Family of Flavors</h2>
-            <p class="text-xl text-gray-700 mb-16 max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                Explore our diverse range of exquisite teas, each crafted to offer a unique journey of taste and aroma. Find your perfect blend for every moment.
-            </p>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-                <div class="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://placehold.co/400x280/D5E8D4/1a362a?text=Leaf+Tea+Collection" alt="Gozal Premium Leaf Tea collection" class="w-full h-56 object-cover rounded-2xl mb-6 shadow-md">
-                    <h3 class="text-2xl font-semibold mb-3" style="color: var(--color-primary-green-900);">Leaf Teas</h3>
-                    <p class="text-gray-600 text-base mb-6">Discover the rich, full-bodied aroma of our premium loose leaf teas, perfect for a traditional and robust brew.</p>
-                    <a href="#" class="inline-block bg-primary-green-700 text-white px-8 py-3 rounded-lg hover:bg-primary-green-900 transition-colors duration-300 text-lg" style="background-color: var(--color-primary-green-700);">View Collection</a>
-                </div>
-
-                <div class="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="400">
-                    <img src="https://placehold.co/400x280/C8E6C9/2d572c?text=Green+Tea+Harmony" alt="Gozal Refreshing Green Tea" class="w-full h-56 object-cover rounded-2xl mb-6 shadow-md">
-                    <h3 class="text-2xl font-semibold mb-3" style="color: var(--color-primary-green-900);">Green Teas</h3>
-                    <p class="text-gray-600 text-base mb-6">Experience the delicate freshness and vibrant notes of our carefully selected green teas, a refreshing delight for well-being.</p>
-                    <a href="#" class="inline-block bg-primary-green-700 text-white px-8 py-3 rounded-lg hover:bg-primary-green-900 transition-colors duration-300 text-lg" style="background-color: var(--color-primary-green-700);">View Collection</a>
-                </div>
-
-                <div class="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="500">
-                    <img src="https://placehold.co/400x280/FFCDD2/D32F2F?text=Fruit+Infusion" alt="Gozal Fruity Tea Infusion" class="w-full h-56 object-cover rounded-2xl mb-6 shadow-md">
-                    <h3 class="text-2xl font-semibold mb-3" style="color: var(--color-primary-green-900);">Fruit Teas</h3>
-                    <p class="text-gray-600 text-base mb-6">Indulge in the sweet and tangy symphony of our fruit-infused teas, a delightful and aromatic escape for your senses.</p>
-                    <a href="#" class="inline-block bg-primary-green-700 text-white px-8 py-3 rounded-lg hover:bg-primary-green-900 transition-colors duration-300 text-lg" style="background-color: var(--color-primary-green-700);">View Collection</a>
-                </div>
-
-                <div class="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="600">
-                    <img src="https://placehold.co/400x280/BBDEFB/1976D2?text=Herbal+Zen" alt="Gozal Soothing Herbal Tea" class="w-full h-56 object-cover rounded-2xl mb-6 shadow-md">
-                    <h3 class="text-2xl font-semibold mb-3" style="color: var(--color-primary-green-900);">Herbal Teas</h3>
-                    <p class="text-gray-600 text-base mb-6">Soothe your soul with our aromatic herbal infusions, crafted for wellness, tranquility, and natural balance.</p>
-                    <a href="#" class="inline-block bg-primary-green-700 text-white px-8 py-3 rounded-lg hover:bg-primary-green-900 transition-colors duration-300 text-lg" style="background-color: var(--color-primary-green-700);">View Collection</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="py-24 md:py-32 bg-white">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-4xl md:text-5xl font-bold mb-16" data-aos="fade-up" style="color: var(--color-primary-green-900);">Crafted with Care in the UAE: The Gozal Difference</h2>
             <div class="max-w-5xl mx-auto text-gray-700 text-lg leading-relaxed mb-16" data-aos="fade-up" data-aos-delay="200">
                 <p class="mb-6">
-                    Unlike many, Gozal Tea controls every step of the journey. Our commitment to excellence is brought to life at our **state-of-the-art factory in the UAE**, a hub of innovation and precision. Here, tradition meets cutting-edge technology, ensuring unparalleled quality, hygiene, and consistency in every blend.
+                    Unlike many, Gozal Tea controls every step of the journey. Our commitment to excellence is brought to life at our <span class="luxurious-text">state-of-the-art factory in the UAE</span>, a hub of innovation and precision. Here, tradition meets cutting-edge technology, ensuring unparalleled quality, hygiene, and consistency in every blend.
                 </p>
                 <p>
                     From meticulous sourcing of the finest leaves to expert blending and precise packaging, our dedicated team ensures that each Gozal Tea product meets the highest international standards. We take immense pride in delivering a product that truly embodies our promise of making everyday better with a fresh cup of tea.
@@ -573,12 +560,12 @@
                 </div>
                 <div class="bg-white p-8 rounded-3xl shadow-xl" data-aos="fade-left" data-aos-delay="300">
                     <p class="text-xl text-gray-700 italic mb-8 leading-relaxed">
-                        "The Fruit Teas from Gozal are a delightful escape. The flavors are so vibrant and natural. It's clear that excellence is a core value for them, reflecting in every sip."
+                        "As a business owner, partnering with Gozal Tea for private labeling was a game-changer. Their professionalism and quality control are exceptional. Highly recommend!"
                     </p>
                     <div class="flex items-center justify-center space-x-4">
-                        <img src="https://placehold.co/60x60/D1C4E9/2d572c?text=AS" alt="Customer Alex S." class="rounded-full w-16 h-16 object-cover shadow-md">
+                        <img src="https://placehold.co/60x60/C5E1A5/2d572c?text=AF" alt="Customer Ahmed F." class="rounded-full w-16 h-16 object-cover shadow-md">
                         <div>
-                            <span class="font-semibold text-gray-800 text-lg block">Alex S.</span>
+                            <span class="font-semibold text-gray-800 text-lg block">Ahmed F.</span>
                             <div class="flex text-yellow-500 text-xl">
                                 &#9733;&#9733;&#9733;&#9733;&#9733;
                             </div>
@@ -589,197 +576,115 @@
         </div>
     </section>
 
-    <section class="py-24 md:py-32 bg-gradient-to-br from-primary-green-900 to-emerald-900 text-white text-center relative overflow-hidden">
-        <div class="absolute inset-0 parallax-bg opacity-30 z-0" style="background-image: url('https://placehold.co/1920x1080/1a362a/D5E8D4?text=Factory+Overhead+View');"></div>
-        <div class="container mx-auto px-6 relative z-10" data-aos="zoom-in" data-aos-duration="1000">
-            <h2 class="text-4xl md:text-5xl font-bold mb-8">
-                Partner with Gozal Tea: Elevate Your Business.
-            </h2>
-            <p class="text-xl text-gray-200 mb-12 max-w-3xl mx-auto">
-                Are you a business looking for a reliable, high-quality tea production partner? Discover how Gozal Tea's expertise and advanced UAE factory can serve your needs.
+    <section id="b2b-section" class="relative py-24 md:py-32 bg-cover bg-center parallax-bg" style="background-image: url('https://images.unsplash.com/photo-1549424813-f47055743a50?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+        <div class="absolute inset-0 bg-primary-green-900 opacity-80 z-0"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center text-white">
+            <h2 class="text-4xl md:text-5xl font-bold mb-10" data-aos="fade-up">Partner with Gozal Tea: Your Production Solution</h2>
+            <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Beyond our beloved Gozal Tea brand, our state-of-the-art UAE factory is equipped to be your strategic partner for premium tea production. From private labeling to custom blending, we offer comprehensive B2B solutions.
             </p>
-            <a href="#b2b-section" class="inline-block bg-accent-gold text-white font-semibold px-12 py-5 rounded-lg shadow-xl hover:bg-yellow-600 transition-colors duration-300 transform hover:scale-105" style="background-color: var(--color-accent-gold);">
-                Explore Business Solutions
-            </a>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-primary-green-500 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-aos="fade-right" data-aos-delay="300">
+                    <h3 class="text-3xl font-bold mb-4" style="color: var(--color-accent-gold);">Private Labeling</h3>
+                    <p class="text-lg mb-6">Leverage our expertise and facilities to create your own branded tea products. We handle the production, so you can focus on your brand's vision.</p>
+                    <ul class="text-left text-lg space-y-3 mb-8">
+                        <li class="flex items-center"><svg class="w-6 h-6 mr-3 text-primary-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Custom Blends & Packaging</li>
+                        <li class="flex items-center"><svg class="w-6 h-6 mr-3 text-primary-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Quality Assurance</li>
+                        <li class="flex items-center"><svg class="w-6 h-6 mr-3 text-primary-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Scalable Production</li>
+                    </ul>
+                    <a href="#contact" class="inline-block bg-primary-green-700 text-white font-semibold px-8 py-3 rounded-lg hover:bg-primary-green-900 transition-colors duration-300 text-lg" style="background-color: var(--color-primary-green-700);">Enquire About Private Label</a>
+                </div>
+
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-primary-green-500 hover:shadow-2xl transition-shadow duration-300 transform hover:scale-105" data-aos="fade-left" data-aos-delay="400">
+                    <h3 class="text-3xl font-bold mb-4" style="color: var(--color-accent-gold);">Bulk Supply & Custom Blends</h3>
+                    <p class="text-lg mb-6">Access our wide range of premium tea ingredients in bulk, or let us craft bespoke blends tailored to your unique specifications.</p>
+                    <ul class="text-left text-lg space-y-3 mb-8">
+                        <li class="flex items-center"><svg class="w-6 h-6 mr-3 text-primary-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Diverse Tea Varieties</li>
+                        <li class="flex items-center"><svg class="w-6 h-6 mr-3 text-primary-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Expert Blending Services</li>
+                        <li class="flex items-center"><svg class="w-6 h-6 mr-3 text-primary-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>Competitive Pricing</li>
+                    </ul>
+                    <a href="#contact" class="inline-block bg-primary-green-700 text-white font-semibold px-8 py-3 rounded-lg hover:bg-primary-green-900 transition-colors duration-300 text-lg" style="background-color: var(--color-primary-green-700);">Request Bulk Quote</a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="b2b-section" class="py-24 md:py-32 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16" data-aos="fade-up" style="color: var(--color-primary-green-900);">Your Strategic Tea Production Partner</h2>
-            <p class="text-xl text-gray-700 text-center mb-16 max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-                Gozal Tea combines over five decades of expertise with cutting-edge facilities in the UAE to offer comprehensive, high-quality tea production solutions for businesses worldwide.
+    <section id="contact" class="py-24 md:py-32 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-16" data-aos="fade-up" style="color: var(--color-primary-green-900);">Let's Connect</h2>
+            <p class="text-xl text-gray-700 mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Whether you're looking for our exquisite teas for your home, or seeking a reliable production partner for your business, we're here to help.
             </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-20">
-                <div class="bg-primary-green-50 p-8 rounded-3xl shadow-lg border border-primary-green-100 hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200" style="background-color: var(--color-primary-green-50);">
-                    <img src="https://placehold.co/100x100/D1E7D5/1a362a?text=Bulk" alt="Bulk Tea Supply icon" class="mx-auto mb-6 rounded-full shadow-md">
-                    <h3 class="text-2xl font-semibold mb-3" style="color: var(--color-primary-green-900);">Bulk Tea Supply</h3>
-                    <p class="text-gray-700 text-base mb-6">Consistent, high-quality bulk tea for your retail, hospitality, or manufacturing needs, ensuring reliability and competitive pricing for large volumes.</p>
-                </div>
-
-                <div class="bg-primary-green-50 p-8 rounded-3xl shadow-lg border border-primary-green-100 hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="300" style="background-color: var(--color-primary-green-50);">
-                    <img src="https://placehold.co/100x100/A5D6A7/2d572c?text=Label" alt="Private Labeling icon" class="mx-auto mb-6 rounded-full shadow-md">
-                    <h3 class="text-2xl font-semibold mb-3" style="color: var(--color-primary-green-900);">Private Labeling</h3>
-                    <p class="text-gray-700 text-base mb-6">Create your own branded tea line with our comprehensive private label services, covering everything from custom blending to bespoke packaging design.</p>
-                </div>
-
-                <div class="bg-primary-green-50 p-8 rounded-3xl shadow-lg border border-primary-green-100 hover:shadow-xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="400" style="background-color: var(--color-primary-green-50);">
-                    <img src="https://placehold.co/100x100/FFCDD2/D32F2F?text=Blend" alt="Custom Blending icon" class="mx-auto mb-6 rounded-full shadow-md">
-                    <h3 class="text-2xl font-semibold mb-3" style="color: var(--color-primary-green-900);">Custom Blending</h3>
-                    <p class="text-gray-700 text-base mb-6">Collaborate with our master blenders to develop unique, bespoke tea blends perfectly tailored to your brand's vision and target market.</p>
-                </div>
-            </div>
-
-            <div class="bg-primary-green-100 p-12 rounded-3xl shadow-inner border border-primary-green-200" data-aos="fade-up" data-aos-delay="500" style="background-color: var(--color-primary-green-100);">
-                <h3 class="text-3xl md:text-4xl font-bold text-center mb-10" style="color: var(--color-primary-green-900);">The Gozal Tea Advantage: Strategic UAE Production</h3>
-                <div class="max-w-4xl mx-auto text-gray-700 text-lg leading-relaxed mb-12">
-                    <p class="mb-4">
-                        Our **state-of-the-art factory in the-UAE** is the cornerstone of Gozal Tea's commitment to excellence. This strategic location offers unparalleled benefits for global partners, ensuring efficient logistics and rapid market access.
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                <div class="text-left" data-aos="fade-right" data-aos-delay="300">
+                    <h3 class="text-3xl font-bold mb-6" style="color: var(--color-primary-green-700);">General Enquiries</h3>
+                    <p class="text-lg text-gray-700 mb-4">
+                        Have a question about our teas or our story? We'd love to hear from you.
                     </p>
-                    <p class="mb-4">
-                        Operations are meticulously managed by **Wellington Marketing FZE**, ensuring seamless processes, rigorous quality control, and the capacity to meet high-volume demands with precision and reliability. We are proud to uphold the highest international standards.
+                    <p class="text-lg text-gray-800 mb-2">
+                        <span class="font-semibold" style="color: var(--color-primary-green-900);">Email:</span> <a href="mailto:info@gozaltea.com" class="text-blue-600 hover:underline">info@gozaltea.com</a>
+                    </p>
+                    <p class="text-lg text-gray-800 mb-2">
+                        <span class="font-semibold" style="color: var(--color-primary-green-900);">Phone:</span> <a href="tel:+971501234567" class="text-blue-600 hover:underline">+971 50 123 4567</a>
+                    </p>
+                    <p class="text-lg text-gray-800">
+                        <span class="font-semibold" style="color: var(--color-primary-green-900);">Address:</span> Gozal Tea Factory, Jebel Ali Free Zone, Dubai, UAE
                     </p>
                 </div>
-                <div class="flex flex-wrap justify-center items-center gap-10 mb-12">
-                    <img src="https://placehold.co/120x70/E0F2F1/1a362a?text=ISO" alt="ISO Certified Logo" class="h-20 w-auto rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
-                    <img src="https://placehold.co/120x70/A5D6A7/2d572c?text=HACCP" alt="HACCP Certified Logo" class="h-20 w-auto rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
-                    <img src="https://placehold.co/120x70/C8E6C9/5d8a63?text=HALAL" alt="Halal Certified Logo" class="h-20 w-auto opacity-75 hover:opacity-100 transition-opacity duration-300">
-                    <img src="https://placehold.co/120x70/A7FFEB/1a362a?text=ORGANIC" alt="Organic Certified Logo" class="h-20 w-auto opacity-75 hover:opacity-100 transition-opacity duration-300">
-                </div>
-            </div>
 
-            <div class="mt-20">
-                <h3 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up" style="color: var(--color-primary-green-900);">Our Valued Partnerships</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-                    <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100" data-aos="fade-right" data-aos-delay="200">
-                        <p class="text-xl text-gray-700 italic mb-8 leading-relaxed">
-                            "Gozal Tea has been an incredibly reliable partner for our hotel's tea supply. Their consistent quality and efficient delivery from their UAE factory have truly elevated our guest experience."
-                        </p>
-                        <div class="flex items-center justify-center space-x-4">
-                            <img src="https://placehold.co/60x60/B2DFDB/1a362a?text=JM" alt="Client John M." class="rounded-full w-16 h-16 object-cover shadow-md">
-                            <div>
-                                <span class="font-semibold text-gray-800 text-lg block">John M.</span>
-                                <span class="text-sm text-gray-500">Procurement Manager, Luxury Hotel Group</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100" data-aos="fade-left" data-aos-delay="300">
-                        <p class="text-xl text-gray-700 italic mb-8 leading-relaxed">
-                            "Their private label service was seamless. Gozal Tea's expertise and the quality of their production in the UAE allowed us to launch our branded tea line with confidence."
-                        </p>
-                        <div class="flex items-center justify-center space-x-4">
-                            <img src="https://placehold.co/60x60/D1C4E9/2d572c?text=SA" alt="Client Sarah A." class="rounded-full w-16 h-16 object-cover shadow-md">
-                            <div>
-                                <span class="font-semibold text-gray-800 text-lg block">Sarah A.</span>
-                                <span class="text-sm text-gray-500">Brand Director, Specialty Retailer</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-20">
-                    <h3 class="text-2xl font-bold text-center mb-8" data-aos="fade-up" style="color: var(--color-primary-green-900);">Trusted by Leading Businesses Globally</h3>
-                    <div class="flex flex-wrap justify-center items-center gap-12">
-                        <img src="https://placehold.co/150x80/F0FDF4/1a362a?text=Client+A" alt="Client Logo A" class="h-20 w-auto opacity-75 hover:opacity-100 transition-opacity duration-300" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="https://placehold.co/150x80/F0FDF4/2d572c?text=Client+B" alt="Client Logo B" class="h-20 w-auto opacity-75 hover:opacity-100 transition-opacity duration-300" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="https://placehold.co/150x80/F0FDF4/5d8a63?text=Client+C" alt="Client Logo C" class="h-20 w-auto opacity-75 hover:opacity-100 transition-opacity duration-300" data-aos="zoom-in" data-aos-delay="300">
-                        <img src="https://placehold.co/150x80/F0FDF4/1a362a?text=Client+D" alt="Client Logo D" class="h-20 w-auto opacity-75 hover:opacity-100 transition-opacity duration-300" data-aos="zoom-in" data-aos-delay="400">
-                    </div>
-                </div>
-            </div>
-
-            <div id="contact-form" class="py-24 bg-gradient-to-br from-primary-green-700 to-primary-green-900 rounded-3xl mt-20 shadow-2xl" data-aos="fade-up" data-aos-duration="1000">
-                <div class="container mx-auto px-6 text-center text-white">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-8">Partner with Gozal Tea</h2>
-                    <p class="text-xl mb-12 max-w-2xl mx-auto text-gray-200">
-                        Ready to elevate your business with premium tea solutions? Fill out the form below, and our team will get in touch to discuss your specific needs.
+                <div class="text-left" data-aos="fade-left" data-aos-delay="400">
+                    <h3 class="text-3xl font-bold mb-6" style="color: var(--color-primary-green-700);">Business Partnerships</h3>
+                    <p class="text-lg text-gray-700 mb-4">
+                        For private labeling, bulk orders, or custom blending services, our B2B team is ready to assist.
                     </p>
-                    <form id="b2b-contact-form" class="max-w-3xl mx-auto bg-white p-12 rounded-3xl shadow-lg text-gray-800 border-t-4 border-accent-gold">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                            <div>
-                                <label for="company-name" class="block text-left text-base font-medium text-gray-700 mb-3">Company Name</label>
-                                <input type="text" id="company-name" name="company-name" placeholder="Your Company Name" required
-                                       class="w-full px-5 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-green-500 transition-all duration-200 shadow-sm">
-                            </div>
-                            <div>
-                                <label for="contact-person" class="block text-left text-base font-medium text-gray-700 mb-3">Contact Person</label>
-                                <input type="text" id="contact-person" name="contact-person" placeholder="Your Name" required
-                                       class="w-full px-5 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-green-500 transition-all duration-200 shadow-sm">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-left text-base font-medium text-gray-700 mb-3">Business Email</label>
-                                <input type="email" id="email" name="email" placeholder="email@example.com" required
-                                       class="w-full px-5 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-green-500 transition-all duration-200 shadow-sm">
-                            </div>
-                            <div>
-                                <label for="phone" class="block text-left text-base font-medium text-gray-700 mb-3">Phone Number (Optional)</label>
-                                <input type="tel" id="phone" name="phone" placeholder="+971 50 123 4567"
-                                       class="w-full px-5 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-green-500 transition-all duration-200 shadow-sm">
-                            </div>
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-800 text-lg font-semibold mb-2">Your Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-5 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-green-500" placeholder="John Doe" required>
                         </div>
-                        <div class="mb-8">
-                            <label for="inquiry-type" class="block text-left text-base font-medium text-gray-700 mb-3">Type of Inquiry</label>
-                            <select id="inquiry-type" name="inquiry-type" required
-                                    class="w-full px-5 py-3 rounded-lg border border-gray-300 bg-white focus:outline-none focus:ring-2 focus:ring-primary-green-500 transition-all duration-200 shadow-sm">
-                                <option value="">Select an option</option>
-                                <option value="bulk_supply">Bulk Tea Supply</option>
-                                <option value="private_label">Private Labeling</option>
-                                <option value="custom_blending">Custom Blending</option>
-                                <option value="distribution">Distribution Partnership</option>
-                                <option value="other">Other</option>
-                            </select>
+                        <div>
+                            <label for="email" class="block text-gray-800 text-lg font-semibold mb-2">Your Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-5 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-green-500" placeholder="john.doe@example.com" required>
                         </div>
-                        <div class="mb-8">
-                            <label for="message" class="block text-left text-base font-medium text-gray-700 mb-3">Your Message</label>
-                            <textarea id="message" name="message" rows="6" placeholder="Tell us about your tea needs and how we can assist..." required
-                                      class="w-full px-5 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200 shadow-sm"></textarea>
+                        <div>
+                            <label for="message" class="block text-gray-800 text-lg font-semibold mb-2">Your Message</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-5 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-green-500" placeholder="Tell us about your needs..." required></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-accent-gold text-white font-semibold px-10 py-4 rounded-lg shadow-xl hover:bg-yellow-600 transition-colors duration-300 transform hover:scale-105" style="background-color: var(--color-accent-gold);">
-                            Send Inquiry
-                        </button>
+                        <button type="submit" class="w-full bg-primary-green-700 text-white font-semibold px-8 py-4 rounded-lg shadow-lg hover:bg-primary-green-900 transition-colors duration-300 text-lg transform hover:scale-105" style="background-color: var(--color-primary-green-700);">Send Message</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-gray-300 py-16">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
-            <div class="flex flex-col items-center md:items-start">
-                <a href="#" class="flex items-center justify-center md:justify-start space-x-3 mb-6">
-                    <img src="https://placehold.co/40x40/1a362a/FFFFFF?text=GT" alt="Gozal Tea Logo" class="rounded-full shadow-md">
-                    <span class="text-2xl font-bold text-white">Gozal Tea</span>
-                </a>
-                <p class="text-sm mb-4 leading-relaxed">The Art of Exceptional Taste, Crafted in the UAE. Making everyday better with a fresh cup of tea, since 1970.</p>
-                <p class="text-sm mt-auto">© 2025 Gozal Tea. All rights reserved.</p>
-            </div>
-
-            <div>
-                <h3 class="text-xl font-semibold text-white mb-6">Connect with Us</h3>
-                <p class="text-base mb-3 leading-relaxed">Wellington Marketing FZE</p>
-                <p class="text-base mb-3 leading-relaxed">P.O.BOX: 17948, Dubai, UAE</p>
-                <p class="text-base mb-3 leading-relaxed">Email: <a href="mailto:info@gozaltea.com" class="hover:text-white transition-colors duration-200">info@gozaltea.com</a></p>
-                <p class="text-base leading-relaxed">Website: <a href="https://www.gozaltea.com" class="hover:text-white transition-colors duration-200">www.gozaltea.com</a></p>
-            </div>
-
-            <div>
-                <h3 class="text-xl font-semibold text-white mb-6">Explore</h3>
-                <div class="flex justify-center md:justify-start space-x-5 mb-6">
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
-                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.79c0-2.508 1.493-3.891 3.776-3.891 1.094 0 2.24.195 2.24.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+    <footer class="bg-primary-green-900 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-3xl font-bold text-white">Gozal Tea</a>
+                    <p class="text-gray-300 mt-2">Crafting Luxury & Fresh Starts Since 1970</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://facebook.com/gozaltea" class="text-gray-300 hover:text-white transition-colors duration-200">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm3.6 8.4h-2.4V6.8c0-.6.4-1.2 1.2-1.2h1.2V3.6H13.2c-2.4 0-4.8 1.8-4.8 4.8v2.4H6v3.6h2.4v7.2h3.6v-7.2h2.4l.6-3.6z"></path></svg>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
-                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.315 2c2.43 0 2.784.002 3.797.048.843.04 1.15.138 1.504.232.682.186 1.203.396 1.704.597.94.376 1.617.81 2.227 1.42.61.61.994 1.287 1.42 2.227.201.501.41 1.022.597 1.704.094.354.192.661.232 1.504.047 1.013.048 1.377.048 3.797s-.001 2.43-.048 3.797c-.04.843-.138 1.15-.232 1.504-.186.682-.396 1.203-.597 1.704-.376.94-.81 1.617-1.42 2.227-.61.61-.994-.994-1.42-1.42-.501.201-1.022.41-1.704.597-.354.094-.661.192-1.504-.232-1.013-.047-1.377-.048-3.797-.048zM12 16.074c-2.248 0-4.074-1.826-4.074-4.074S9.752 7.926 12 7.926s4.074 1.826 4.074 4.074-1.826 4.074-4.074 4.074zm0-6.526c-1.352 0-2.452 1.1-2.452 2.452s1.1 2.452 2.452 2.452 2.452-1.1 2.452-2.452-1.1-2.452-2.452-2.452z" clip-rule="evenodd" /></svg>
+                    <a href="https://instagram.com/gozaltea" class="text-gray-300 hover:text-white transition-colors duration-200">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M7.8 2h8.4C18.15 2 20 3.85 20 6.2v8.4c0 2.35-1.85 4.2-4.2 4.2H7.8C5.45 19 3.6 17.15 3.6 14.8V6.2C3.6 3.85 5.45 2 7.8 2zm-.2 2.4c-.9 0-1.6.7-1.6 1.6v8.4c0 .9.7 1.6 1.6 1.6h8.4c.9 0 1.6-.7 1.6-1.6V6.2c0-.9-.7-1.6-1.6-1.6H7.6zm1.2 2.4h6c.66 0 1.2.54 1.2 1.2v6c0 .66-.54 1.2-1.2 1.2h-6c-.66 0-1.2-.54-1.2-1.2v-6c0-.66.54-1.2 1.2-1.2zm3.2 1.2c-1.76 0-3.2 1.44-3.2 3.2s1.44 3.2 3.2 3.2 3.2-1.44 3.2-3.2-1.44-3.2-3.2-3.2zm0 1.6c.88 0 1.6.72 1.6 1.6s-.72 1.6-1.6 1.6-1.6-.72-1.6-1.6.72-1.6 1.6-1.6zm4.8-5.6c0-.66-.54-1.2-1.2-1.2H16c-.66 0-1.2.54-1.2 1.2v.4c0 .66.54 1.2 1.2 1.2h.4c.66 0 1.2-.54 1.2-1.2v-.4z"></path></svg>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200">
-                        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 0h-15C2.01 0 0 2.01 0 4.5v15C0 21.99 2.01 24 4.5 24h15c2.49 0 4.5-2.01 4.5-4.5v-15C24 2.01 21.99 0 19.5 0zM7.25 20.25h-2.5v-8.5h2.5v8.5zM6 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm13.25 11.25h-2.5v-4.25c0-.94-.06-1.92-.3-2.61-.25-.7-.68-1.25-1.25-1.61-.57-.36-1.3-.54-2.19-.54-1.65 0-2.84.9-3.32 2.19v4.25h-2.5V9.5h2.5v1.6c.4-.73 1.1-1.6 2.4-1.6 1.75 0 3.06 1.14 3.06 3.85v5.9z"/></svg>
+                    <a href="https://linkedin.com/company/gozaltea" class="text-gray-300 hover:text-white transition-colors duration-200">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.564c0-1.312-.023-2.998-1.824-2.998-1.826 0-2.106 1.424-2.106 2.909v5.653H9.437V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.612 0 4.28 2.378 4.28 5.485v6.356zM5.337 7.199a1.884 1.884 0 01-1.883-1.892c0-1.042.842-1.891 1.883-1.891s1.883.849 1.883 1.891c0 1.042-.842 1.892-1.883 1.892zm1.751 13.253H3.586V9h3.502v11.452zM22.227 0H1.771C.792 0 0 .779 0 1.745v20.51C0 23.22 2.227 24 1.771 24h20.455c.979 0 1.772-.78 1.772-1.746V1.745C24 .779 23.208 0 22.227 0z"></path></svg>
                     </a>
                 </div>
-                <ul class="text-base space-y-3">
-                    <li><a href="#" class="hover:text-white transition-colors duration-200">Privacy Policy</a></li>
-                    <li><a href="#" class="hover:text-white transition-colors duration-200">Terms of Service</a></li>
-                    <li><a href="#" class="hover:text-white transition-colors duration-200">Certifications</a></li>
-                </ul>
+            </div>
+            <div class="border-t border-gray-700 pt-8 mt-8">
+                <p class="text-gray-400 text-sm">&copy; <span id="current-year"></span> Gozal Tea. All rights reserved. | Powered by Wellington Marketing FZE</p>
+                <div class="mt-4 text-gray-400 text-sm">
+                    <a href="#" class="hover:text-white transition-colors duration-200 mx-2">Privacy Policy</a>
+                    <span class="mx-2">|</span>
+                    <a href="#" class="hover:text-white transition-colors duration-200 mx-2">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
@@ -787,119 +692,118 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            once: true, // Only animate once
-            duration: 1000, // Increased duration for smoother fades
-            easing: 'ease-out-cubic', // Easing function for natural movement
-            delay: 100, // Slight delay for staggered animations
+            once: true,
+            duration: 1000,
+            easing: 'ease-out-quad',
         });
 
-        // Mobile Menu Toggle
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
         const mobileMenu = document.getElementById('mobile-menu');
-        const closeMobileMenu = document.getElementById('close-mobile-menu');
 
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
         });
 
-        closeMobileMenu.addEventListener('click', () => {
+        closeMobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
-            document.body.style.overflow = ''; // Restore scrolling
         });
 
-        // Close mobile menu when a link is clicked
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                document.body.style.overflow = ''; // Restore scrolling
+        // Custom message box for form submission instead of alert
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Show custom message box
+            const messageBox = document.createElement('div');
+            messageBox.classList.add('message-box');
+            messageBox.innerHTML = `
+                <h3 class="text-2xl font-bold mb-4" style="color: var(--color-primary-green-900);">Thank You!</h3>
+                <p class="text-lg text-gray-700 mb-6">Your message has been sent successfully. We will get back to you shortly.</p>
+                <button id="closeMessageBox">OK</button>
+            `;
+            document.body.appendChild(messageBox);
+
+            document.getElementById('closeMessageBox').addEventListener('click', function() {
+                messageBox.remove();
+                // Optionally, clear the form fields
+                document.getElementById('contactForm').reset();
             });
         });
 
-        // B2B Contact Form Submission (Client-side only for this static page)
-        const b2bContactForm = document.getElementById('b2b-contact-form');
-
-        b2bContactForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
-
-            const companyName = document.getElementById('company-name').value;
-            const contactPerson = document.getElementById('contact-person').value;
-            const email = document.getElementById('email').value;
-            const inquiryType = document.getElementById('inquiry-type').value;
-            const message = document.getElementById('message').value;
-
-            if (companyName && contactPerson && email && inquiryType && message) {
-                // In a real application, you would send this data to a server/CRM
-                // For this static page, we'll simulate success with a message box
-                showMessage('Thank you for your inquiry! Our team will be in touch shortly.');
-                b2bContactForm.reset(); // Clear the form
-            } else {
-                showMessage('Please fill in all required fields.');
-            }
-        });
-
-        // Function to show a custom message box (instead of alert)
-        function showMessage(message) {
-            const messageBox = document.createElement('div');
-            messageBox.className = 'message-box';
-            messageBox.innerHTML = `
-                <p class="text-lg font-semibold text-gray-800 mb-4">${message}</p>
-                <button onclick="this.parentNode.remove()">Close</button>
-            `;
-            document.body.appendChild(messageBox);
-        }
-
-        // --- Image Generation and Display Logic ---
-        async function generateAndDisplayHeroImage() {
-            const heroImage = document.getElementById('hero-main-image');
+        // Dynamic Hero Image Generation
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroImageContainer = document.getElementById('hero-image-container');
+            const heroMainImage = document.getElementById('hero-main-image');
             const loadingSpinner = document.getElementById('loading-spinner');
 
-            // Show spinner, hide image
-            loadingSpinner.classList.remove('hidden');
-            heroImage.classList.add('hidden');
+            const generateAndLoadImage = async () => {
+                loadingSpinner.classList.remove('hidden'); // Show spinner
+                heroMainImage.classList.add('hidden'); // Hide image
 
-            try {
-                const prompt = "A luxurious tea cup filled with black tea, with fresh mint leaves and a slice of lemon on the side, against a deep, elegant green background. On the side, there is a luxurious tea box/packet that clearly says 'Gozal Tea'. The style should be high-quality product photography, with soft, inviting lighting. Include the text 'Start fresh. Stay inspired.' elegantly integrated into the image.";
-                const payload = { instances: { prompt: prompt }, parameters: { "sampleCount": 1 } };
-                const apiKey = ""; // Leave as empty string for Canvas to provide
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=${apiKey}`;
+                const prompt = "A luxurious cup of green tea with a sprig of mint and a slice of lemon on a minimalist, elegant wooden table. Soft, natural light. The background is blurred, showing a subtle, high-end tea shop interior. The overall aesthetic is calm, sophisticated, and inviting. Include the slogan 'Start fresh. Stay inspired.' subtly integrated into the scene, perhaps etched on the cup or as a faint reflection, in a premium, elegant font. High resolution, photorealistic.";
+                const negative_prompt = "cartoon, 3D, ugly, blurry, deformed, bad anatomy, disfigured, poorly drawn face, poorly drawn hands, missing limbs, extra limbs, long neck, bad perspective, vibrant colors, loud, cluttered, cheap, low quality, watermarks, text, brand names, logos (except the slogan), busy background, unnatural lighting, artificial light, plastic, digital art, illustration, painting, graphic, render";
+                // The API key is intentionally left empty as per instructions.
+                const apiKey = ''; 
 
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
+                try {
+                    const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-Api-Version': 'v1',
+                            'Accept': 'application/json',
+                            'Authorization': `Bearer ${apiKey}`
+                        },
+                        body: JSON.stringify({
+                            instances: {
+                                prompt: prompt,
+                                negative_prompt: negative_prompt,
+                                aspect_ratio: '16:9'
+                            },
+                            parameters: {
+                                sampleCount: 1
+                            }
+                        })
+                    });
 
-                const result = await response.json();
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(`HTTP error! status: ${response.status}, message: ${errorData.message || 'Unknown error'}`);
+                    }
 
-                if (result.predictions && result.predictions.length > 0 && result.predictions[0].bytesBase64Encoded) {
-                    const imageUrl = `data:image/png;base64,${result.predictions[0].bytesBase64Encoded}`;
-                    heroImage.src = imageUrl;
-                    heroImage.onload = () => {
-                        loadingSpinner.classList.add('hidden');
-                        heroImage.classList.remove('hidden');
-                    };
-                    heroImage.onerror = () => {
-                        loadingSpinner.classList.add('hidden');
-                        heroImage.src = 'https://placehold.co/700x500/F0FDF4/1a362a?text=Image+Load+Error';
-                        heroImage.classList.remove('hidden');
-                    };
-                } else {
-                    console.error('Image generation failed or returned no data:', result);
+                    const data = await response.json();
+                    if (data && data.predictions && data.predictions.length > 0 && data.predictions[0].bytesBase64Encoded) {
+                        const imageUrl = `data:image/png;base64,${data.predictions[0].bytesBase64Encoded}`;
+                        heroMainImage.src = imageUrl;
+                        heroMainImage.onload = () => {
+                            loadingSpinner.classList.add('hidden'); // Hide spinner
+                            heroMainImage.classList.remove('hidden'); // Show image
+                            AOS.refresh(); // Refresh AOS to pick up newly visible image
+                        };
+                        heroMainImage.onerror = () => {
+                            console.error('Failed to load image from URL.');
+                            loadingSpinner.classList.add('hidden');
+                            heroMainImage.src = 'https://via.placeholder.com/700x500?text=Image+Load+Error'; // Fallback
+                            heroMainImage.classList.remove('hidden');
+                        };
+                    } else {
+                        throw new Error('No image URL found in the response.');
+                    }
+                } catch (error) {
+                    console.error('Error generating image:', error);
                     loadingSpinner.classList.add('hidden');
-                    heroImage.src = 'https://placehold.co/700x500/F0FDF4/1a362a?text=Image+Generation+Failed';
-                    heroImage.classList.remove('hidden');
+                    heroMainImage.src = 'https://via.placeholder.com/700x500?text=Failed+to+Generate+Image'; // Fallback
+                    heroMainImage.classList.remove('hidden');
                 }
-            } catch (error) {
-                console.error('Error generating image:', error);
-                loadingSpinner.classList.add('hidden');
-                heroImage.src = 'https://placehold.co/700x500/F0FDF4/1a362a?text=Network+Error';
-                heroImage.classList.remove('hidden');
-            }
-        }
+            };
 
-        // Call the function to generate and display the image on page load
-        window.onload = generateAndDisplayHeroImage;
+            // Call the function to generate and load the image
+            generateAndLoadImage();
+        });
     </script>
 </body>
 </html>
